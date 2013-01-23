@@ -1,0 +1,125 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><style type='text/css'>
+body {
+  background:#000;
+  color:#fff;
+  font-family:'Georgia';
+  -webkit-transform:rotate(-4deg) scale(0.9);
+
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+@-webkit-keyframes blinker {  
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
+}
+
+em {
+  -webkit-animation-name: blinker;  
+  -webkit-animation-iteration-count: infinite;  
+  -webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+  -webkit-animation-duration: 800ms; 
+}
+
+a {
+  background: #34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  max-width:75%;
+  max-height:75%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  vertical-align:middle;
+  position:absolute;
+  top:0;
+  left:0;
+}
+</style><script type='text/javascript'>
+window.onload = function() {
+    var s = document.getElementsByTagName('div'), cur = 0;
+    if (!s) return;
+    function go(n) {
+        cur = n;
+        var i = 1e3, e = s[n];
+        for (var k = 0; k < s.length; k++) s[k].style.display = 'none';
+        e.style.display = 'inline';
+        e.style.fontSize = i + 'px';
+        if (e.firstChild.nodeName === 'IMG') {
+            document.body.style.backgroundImage = 'url(' + e.firstChild.src + ')';
+            e.firstChild.style.display = 'none';
+        } else {
+            document.body.style.backgroundImage = '';
+            document.body.style.backgroundColor = e.style.backgroundColor;
+        }
+        while (
+            e.offsetWidth > window.innerWidth ||
+            e.offsetHeight > window.innerHeight) {
+            e.style.fontSize = (i -= 10) + 'px';
+            if (i < 0) break;
+        }
+        e.style.marginTop = ((window.innerHeight - e.offsetHeight) / 2) + 'px';
+        if (window.location.hash !== n) window.location.hash = n;
+        document.title = e.textContent || e.innerText;
+    }
+    document.onclick = function() {
+        go(++cur % (s.length));
+    };
+    document.onkeydown = function(e) {
+        (e.which === 39) && go(Math.min(s.length - 1, ++cur));
+        (e.which === 37) && go(Math.max(0, --cur));
+    };
+    function parse_hash() {
+        return Math.max(Math.min(
+            s.length - 1,
+            parseInt(window.location.hash.substring(1), 10)), 0);
+    }
+    if (window.location.hash) cur = parse_hash() || cur;
+    window.onhashchange = function() {
+        var c = parse_hash();
+        if (c !== cur) go(c);
+    };
+
+    setInterval(function() { 
+        var e = document.createEvent("Events"); 
+        e.initEvent("click"); 
+        document.dispatchEvent(e) }, 15000)
+    go(cur);
+};
+</script>
+</head>
+<body>
+  <div>Open as in <em>Goatse</em></div>
+  <div><img src="./img/coolface-trollface-trolls-faces.png"><em>Trollin'</em></div>
+  <div>gratis vs libre<p>
+    <img src='./img/freebeer.jpeg' width="400" height="300"/> vs <img src='./img/alex_jones_nerds.png' width="400" height="300"/>
+  </div>
+  <div>open ...source ...data ...systems ...standards ...knowledge ...content ...access ...government </div>
+  <div>characteristics of open</div>
+  <div>no&nbsp;<img src="./img/audi_goatse.jpg"> restrictions on use</div>
+  <div>you can see if it works<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="./img/reaction.jpeg" vertical-align="middle";>
+  </div>
+  <div>redistribute <img src="./img/2012_olympics.jpg">it in any manner</div>
+  <div>you can &nbsp;<img src="./img/find-the-hero-inside-of-you-photo-u1.jpg">improve it</div>
+  <div>&nbsp;<img src="./img/anil.184.jpg">opportune</div>
+  <div>processable by machine<p><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./img/comparison.jpg"></div>
+  <div>fundamental<br><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./img/goetzche.jpg" style="float:center"></div>
+  <div>no owner<br>&nbsp;&nbsp;&nbsp;&nbsp;<img src="./img/security.png"></div>
+  <div>complete<p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="./img/goatse-cookies.jpg"></div>
+  <div>accessible&nbsp;&nbsp;&nbsp;<img src="./img/the-goatse-carousel-photo-u1.jpg"></div>
+  <div>not discriminatory<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./img/career.jpg"></div>
+  <div>no licenses<p><img src="./img/the-disney-goatse-camera-photo-u1.jpg">&nbsp;&nbsp;&nbsp;<img src="./img/the-disney-goatse-clock-photo-u1.jpg"></div>
+  <div>&nbsp;<img src="./img/the-breville-sandwich-maker-goatse-photo-u1.jpg">&nbsp;&raquo;&nbsp;<img src="./img/brevilleman.png"></div>
+  <div>Goatse is a durable meme that exhibits characteristics of openess.</div>
+  <div>Walking the walk.<p>
+    Tom Macwright: <a href="https://github.com/tmcw/big">big</a>. <em>@tmwcv</em><p>
+    Max Ogden: js timer snippet. <em>@maxogdon</em>
+  </div>
+<body>
